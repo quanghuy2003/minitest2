@@ -32,7 +32,7 @@ public class StudentManagement implements Manager<Student>{
 
     @Override
     public void add(Student student) {
-        this.listPeople.add(student);
+        listPeople.add(student);
     }
 
     @Override
