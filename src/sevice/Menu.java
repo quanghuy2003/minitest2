@@ -1,5 +1,7 @@
 package sevice;
 
+import model.Student;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -15,10 +17,9 @@ public class Menu {
             System.out.println(" 4 : Tìm kiếm hs ");
             System.out.println(" 5 : Sắp xếp hs theo điểm ");
             System.out.println(" 6  : Hiển thị danh sách hs ");
-            System.out.println(" 7 : Hiển thị tổng điểm của hs trong danh sách");
             System.out.println(" 0 : kết thúc ");
             selection = scanner.nextInt();
-            if (selection > 0 && selection < 8) {
+            if (selection > 0 && selection < 7) {
                 switch (selection) {
                     case 1:
                         System.out.println("Nhập tên hs : ");
@@ -67,11 +68,9 @@ public class Menu {
                     case 6:
                         studentManager.print();
                         break;
-                    case 7:
-                        studentManager.print();
                 }
 
-            } else if (selection < 0 || selection > 7) {
+            } else if (selection < 0 || selection > 6) {
                 System.out.println("Chúng tôi chưa phát triển chức năng này ! ");
             } else {
                 System.out.println("đã tắt chương trình");
