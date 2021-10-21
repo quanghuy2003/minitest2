@@ -5,7 +5,7 @@ import model.Student;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class StudentManagement implements Manager<Student>{
+public class StudentManagement implements Manager<Student> {
 
     private ArrayList<Student> listStudent;
 
@@ -19,7 +19,7 @@ public class StudentManagement implements Manager<Student>{
     }
 
     public void Manager() {
-       listStudent = new ArrayList<> ();
+        listStudent = new ArrayList<>();
     }
 
 

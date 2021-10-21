@@ -35,23 +35,21 @@ public class Menu {
                         break;
                     case 2:
                         System.out.println("Nhập vào id học sinh mà bạn muốn xóa : ");
-                        int deleteId = scanner.nextInt();
-                        studentManager.delete(deleteId);
+                        int idWantToDelete = scanner.nextInt();
+                        studentManager.delete(idWantToDelete);
                         break;
                     case 3:
                         System.out.println("Nhập id học sinh mà bạn muốn sửa");
                         int idWantToFix = scanner.nextInt();
-                        if (studentManager.findIndexById(idWantToFix) > -1) {
+                        if (studentManager.findIndexById(idWantToFix) != -1) {
                             System.out.println("Nhập tên học sinh : ");
                             scanner.nextLine();
-                            String setName = scanner.nextLine();
-                            System.out.println("Nhập id cho học sinh : ");
-                            int setId = scanner.nextInt();
+                            String nameWantToFix = scanner.nextLine();
                             System.out.println("Nhập độ tuổi của học sinh :");
-                            int setAge = scanner.nextInt();
+                            int ageWantToFix = scanner.nextInt();
                             System.out.println("Nhập số điểm trung bình của học sinh :");
-                            int setMediumScore = scanner.nextInt();
-                            Student newStudent = new Student(setId, setName, setAge, setMediumScore);
+                             int averageMarkWantToFix = scanner.nextInt();
+                            Student newStudent = new Student(idWantToFix, nameWantToFix, ageWantToFix, averageMarkWantToFix);
                             studentManager.update(idWantToFix, newStudent);
                         }
                         break;
