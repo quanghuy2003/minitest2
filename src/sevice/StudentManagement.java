@@ -1,20 +1,20 @@
 package sevice;
 
-import model.Student;
+import model.People;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class StudentManagement implements Manager<Student>{
+public class StudentManagement implements Manager<People>{
 
-    private ArrayList<Student> listPeople;
+    private ArrayList<People> listPeople;
 
 
     public StudentManagement() {
         this.listPeople = new ArrayList<>();
     }
 
-    public void PeopleManager(ArrayList<Student> listPeople) {
+    public void PeopleManager(ArrayList<People> listPeople) {
         this.listPeople = listPeople;
     }
 
@@ -31,7 +31,7 @@ public class StudentManagement implements Manager<Student>{
     }
 
     @Override
-    public void add(Student student) {
+    public void add(People student) {
         listPeople.add(student);
     }
 
@@ -53,13 +53,13 @@ public class StudentManagement implements Manager<Student>{
     }
 
     @Override
-    public void update(int id, Student student) {
+    public void update(int id, People student) {
         int index = findIndexById(id);
         listPeople.set(index, student);
     }
 
     @Override
     public void sort() {
-        listPeople.sort(Comparator.comparingInt(Student::getId));
+        listPeople.sort(Comparator.comparingInt(People::getId));
     }
 }

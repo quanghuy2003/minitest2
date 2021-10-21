@@ -1,6 +1,8 @@
 package sevice;
 
-public class Student extends model.Student {
+import model.People;
+
+public class Student  extends People {
 
     private int point;
 

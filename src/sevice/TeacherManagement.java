@@ -1,6 +1,5 @@
 package sevice;
 
-import model.Student;
 import model.Teacher;
 
 import java.util.ArrayList;
