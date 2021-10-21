@@ -1,44 +1,44 @@
 package sevice;
 
-import model.People;
+import model.Student;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class StudentManagement implements Manager<People>{
+public class StudentManagement implements Manager<Student>{
 
-    private ArrayList<People> listPeople;
+    private ArrayList<Student> listStudent;
 
 
     public StudentManagement() {
-        this.listPeople = new ArrayList<>();
+        this.listStudent = new ArrayList<>();
     }
 
-    public void PeopleManager(ArrayList<People> listPeople) {
-        this.listPeople = listPeople;
+    public void PeopleManager(ArrayList<Student> listPeople) {
+        this.listStudent = listPeople;
     }
 
     public void Manager() {
-       listPeople= new ArrayList<> ();
+       listStudent = new ArrayList<> ();
     }
 
 
     @Override
     public void print() {
-        for (int i = 0; i < this.listPeople.size(); ++i) {
-            System.out.println(this.listPeople.get(i));
+        for (int i = 0; i < this.listStudent.size(); ++i) {
+            System.out.println(this.listStudent.get(i));
         }
     }
 
     @Override
-    public void add(People student) {
-        listPeople.add(student);
+    public void add(Student student) {
+        listStudent.add(student);
     }
 
     @Override
     public int findIndexById(int id) {
-        for (int i = 0; i < this.listPeople.size(); ++i) {
-            if ((listPeople.get(i)).getId() == id) {
+        for (int i = 0; i < this.listStudent.size(); ++i) {
+            if ((listStudent.get(i)).getId() == id) {
                 return i;
             }
         }
@@ -49,17 +49,17 @@ public class StudentManagement implements Manager<People>{
     @Override
     public void delete(int id) {
         int index = this.findIndexById(id);
-        this.listPeople.remove(index);
+        this.listStudent.remove(index);
     }
 
     @Override
-    public void update(int id, People student) {
+    public void update(int id, Student student) {
         int index = findIndexById(id);
-        listPeople.set(index, student);
+        listStudent.set(index, student);
     }
 
     @Override
     public void sort() {
-        listPeople.sort(Comparator.comparingInt(People::getId));
+        listStudent.sort(Comparator.comparingInt(Student::getId));
     }
 }

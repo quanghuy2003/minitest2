@@ -11,45 +11,45 @@ public class Menu {
         int selection;
         do {
             System.out.println("---------------------Menu-------------------");
-            System.out.println(" 1 : Thêm hs ");
-            System.out.println(" 2 : Xóa hs ");
-            System.out.println(" 3 : Sửa hs ");
-            System.out.println(" 4 : Tìm kiếm hs ");
-            System.out.println(" 5 : Sắp xếp hs theo điểm ");
-            System.out.println(" 6  : Hiển thị danh sách hs ");
+            System.out.println(" 1 : Thêm học sinh ");
+            System.out.println(" 2 : Xóa học sinh ");
+            System.out.println(" 3 : Sửa học sinh ");
+            System.out.println(" 4 : Tìm kiếm học sinh ");
+            System.out.println(" 5 : Sắp xếp học sinh theo điểm ");
+            System.out.println(" 6  : Hiển thị danh sách học sinh ");
             System.out.println(" 0 : kết thúc ");
             selection = scanner.nextInt();
             if (selection > 0 && selection < 7) {
                 switch (selection) {
                     case 1:
-                        System.out.println("Nhập tên hs : ");
+                        System.out.println("Nhập tên học sinh : ");
                         scanner.nextLine();
                         String name = scanner.nextLine();
-                        System.out.println("Nhập id cho hs : ");
+                        System.out.println("Nhập id cho học sinh : ");
                         int id = scanner.nextInt();
-                        System.out.println("Nhập độ tuổi của hs :");
+                        System.out.println("Nhập độ tuổi của học sinh :");
                         int age = scanner.nextInt();
-                        System.out.println("Nhập số điểm trung bình của hs :");
+                        System.out.println("Nhập số điểm trung bình của học sinh :");
                         int mediumScore = scanner.nextInt();
                         studentManager.add(new Student(id, name, age, mediumScore));
                         break;
                     case 2:
-                        System.out.println("Nhập vào id hs mà bạn muốn xóa : ");
+                        System.out.println("Nhập vào id học sinh mà bạn muốn xóa : ");
                         int deleteId = scanner.nextInt();
                         studentManager.delete(deleteId);
                         break;
                     case 3:
-                        System.out.println("Nhập id hs mà bạn muốn sửa");
+                        System.out.println("Nhập id học sinh mà bạn muốn sửa");
                         int idWantToFix = scanner.nextInt();
                         if (studentManager.findIndexById(idWantToFix) > -1) {
-                            System.out.println("Nhập tên hs : ");
+                            System.out.println("Nhập tên học sinh : ");
                             scanner.nextLine();
                             String setName = scanner.nextLine();
-                            System.out.println("Nhập id cho hs : ");
+                            System.out.println("Nhập id cho học sinh : ");
                             int setId = scanner.nextInt();
-                            System.out.println("Nhập độ tuổi của hs :");
+                            System.out.println("Nhập độ tuổi của học sinh :");
                             int setAge = scanner.nextInt();
-                            System.out.println("Nhập số điểm trung bình của hs :");
+                            System.out.println("Nhập số điểm trung bình của học sinh :");
                             int setMediumScore = scanner.nextInt();
                             Student newStudent = new Student(setId, setName, setAge, setMediumScore);
                             studentManager.update(idWantToFix, newStudent);
